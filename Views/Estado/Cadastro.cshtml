@@ -1,25 +1,29 @@
 ﻿
 @{
-    ViewBag.Title = "Cadastro";
+    Layout = null;
 }
-<h3>Cadastro de Estado</h3>
-<form action="/estado/cadastro" method="post">
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" class="form-control" id="campo-nome" />
-                <label for="campo-nome">Sigla</label>
-                <input type="text" name="nome" class="form-control" id="campo-nome" />
-            </div>
-        </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="div-titulo">
+        <a class="titulo" href="/estado/store" id="lista-estado">Lista de Estado</a>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <button type="submit" class="btn btn-success">
-                Salvar
-            </button>
+    <form action="/estado/store" method="post">
+        <div>
+            <label for="campo-nome" class="label">Nome</label>
+            <input type="text" name="nome" id="campo-nome" />
         </div>
-    </div>
-</form>
+        <div>
+            <label for="campo-sigla">Sigla</label>
+            <input type="text" name="sigla" id="campo-sigla" />
+        </div>
+        
 
+        <button class="botao" type="submit">Salvar</button>
+    </form>
+</body>
+</html>
