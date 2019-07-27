@@ -1,29 +1,31 @@
 ﻿
 @{
-    Layout = null;
-}
+    ViewBag.Title = "Cadastro";}
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width" />
     <title>Cadastro</title>
 </head>
 <body>
-    <div class="div-titulo">
-        <a class="titulo" href="/estado/store" id="lista-estado">Lista de Estado</a>
-    </div>
-    <form action="/estado/store" method="post">
-        <div>
-            <label for="campo-nome" class="label">Nome</label>
-            <input type="text" name="nome" id="campo-nome" />
+    <div class="row">
+        <div class="div-titulo">
+            <a class="titulo" href="/estado/index" id="lista-estado">Lista de Estado</a>
         </div>
-        <div>
-            <label for="campo-sigla">Sigla</label>
-            <input type="text" name="sigla" id="campo-sigla" />
-        </div>
-        
+        <form action="/estado/store" method="post">
+            <div>
+                <label for="campo-nome" class="label">Nome</label>
+                <input type="text" name="nome" id="campo-nome" />
+            </div>
+            <div>
+                <label for="campo-sigla">Sigla</label>
+                <input type="text" name="sigla" id="campo-sigla" />
+            </div>
 
-        <button class="botao" type="submit">Salvar</button>
-    </form>
+
+            <button class="btn btn-success" type="submit">Salvar</button>
+        </form>
+    </div>
 </body>
 </html>

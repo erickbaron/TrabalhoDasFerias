@@ -2,53 +2,56 @@
 @{
     ViewBag.Title = "Index";
 }
-<h3>Lista de Estados</h3>
-<div class="row">
-    <div class="col-12">
-        <a href="/estado/cadastro" class="btn btn-primary float-right">
-            <i class="fas fa-plus"></i> Novo Estado
-        </a>
-    </div>
-    <table class="table table-striped table-hover table-bordered">
-        <thead>
-            <tr>
-                <th class="text-center">Código</th>
-                <th class="text-center">Nome</th>
-                <th class="text-center">Sigla</th>
-                <th class="text-center">Ação</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th class="text-center">Código</th>
-                <th class="text-center">Nome</th>
-                <th class="text-center">Sigla</th>
-                <th class="text-center">Ação</th>
 
-            </tr>
-        </tfoot>
-        <tbody>
-            @foreach (Model.Estado estado in ViewBag.Estado)
-            {
-                <tr>
-                    <td class="text-center">@estado.Id</td>
-                    <td class="text-center">@estado.Nome</td>
-                    <td class="text-center">@estado.Sigla</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                        <a href="/estado/editar?id=@estado.Id" class="btn btn-primary">
-                            <i class="fas fa-edit"></i> Editar
-                        </a>
-                        <a href="/estado/apagar?id=@estado.Id" class="btn btn-danger">
-                            <i class="far fa-trash"></i> Apagar
-                        </a>
-                        </div>
+    <h3>Lista de Estados</h3>
+                <div class="col-12">
+                    <a href="/estado/cadastro" class="btn btn-primary float-right">
+                        <i class="fas fa-plus"></i> Novo Estado
+                    </a>
+                </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead style = "font-size:17px">
+                        <tr>
+                            <th class="text-center">Código</th>
+                            <th class="text-center">Nome</th>
+                            <th class="text-center">Sigla</th>
+                            <th class="text-center">Ação</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th class="text-center">Código</th>
+                            <th class="text-center">Nome</th>
+                            <th class="text-center">Sigla</th>
+                            <th class="text-center">Ação</th>
+
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (Model.Estado estado in ViewBag.Estado)
+                        {
+                            <tr>
+                                <td class="text-center">@estado.Id</td>
+                                <td class="text-center">@estado.Nome</td>
+                                <td class="text-center">@estado.Sigla</td>
+                                <td>
+                                    <div class="btn-group center " role="group">
+                                        <a href="/estado/editar?id=@estado.Id" class="btn btn-primary">
+                                            <i class="fas fa-edit"></i> Editar
+                                        </a>
+                                        <a href="/estado/apagar?id=@estado.Id" class="btn btn-danger">
+                                            <i class="far fa-trash"></i> Apagar
+                                        </a>
+                                    </div>
 
 
-                    </td>
-          
-                          </tr>
-            }
-        </tbody>
-    </table>
-</div>
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            
+
+
+    

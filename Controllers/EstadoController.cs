@@ -10,7 +10,7 @@ namespace View.Controllers
 {
     public class EstadoController : Controller
     {
-        public EstadoRepository repository;
+        private EstadoRepository repository;
 
         public EstadoController()
         {
