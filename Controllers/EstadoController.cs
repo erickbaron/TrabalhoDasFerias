@@ -29,7 +29,7 @@ namespace View.Controllers
         {
             return View();
         }
-
+        
         public ActionResult Store(string nome, string sigla)
         {
             Estado estado = new Estado();
@@ -41,11 +41,9 @@ namespace View.Controllers
 
         public ActionResult Editar(int id)
         {
-            Estado estado = repository.ObterPeloId(id);
-            ViewBag.Estado = estado;
             return View();
         }
-        
+
         public ActionResult Apagar(int id)
         {
             repository.Apagar(id);
@@ -54,13 +52,7 @@ namespace View.Controllers
 
         public ActionResult Update(int id, string nome, string sigla)
         {
-            Estado estado = new Estado();
-            estado.Id = id;
-            estado.Nome = nome;
-            estado.Sigla = sigla;
-
-            repository.Alterar(estado);
-            return RedirectToAction("Index");
+            return View();
         }
 
     }

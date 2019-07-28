@@ -45,8 +45,6 @@ namespace Trabalho_das_Férias.Controllers
 
         public ActionResult Editar(int id)
         {
-            Cidade cidade = repository.ObterPeloId(id);
-            ViewBag.Cidade = cidade;
             return View();
         }
 
@@ -58,13 +56,7 @@ namespace Trabalho_das_Férias.Controllers
 
         public ActionResult Update(int id, string nome, int numeroHabitantes)
         {
-            Cidade cidade = new Cidade();
-            cidade.Id = id;
-            cidade.Nome = nome;
-            cidade.NumeroHabitantes = numeroHabitantes;
-
-            repository.Alterar(cidade);
-            return RedirectToAction("Index");
+            return View();
         }
 
     }

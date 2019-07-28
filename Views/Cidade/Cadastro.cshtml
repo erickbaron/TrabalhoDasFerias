@@ -1,40 +1,36 @@
 ﻿@{
     ViewBag.Title = "Cadastro";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width" />
-    <title>Cadastro</title>
-</head>
-<body>
-    <form action="/cidade/store" method="post">
-        <div>
-            <label for="campo-nome" class="label">Nome</label>
-            <input type="text" name="nome" id="campo-nome" />
-        </div>
-        <div>
-            <label for="campo-numero-habitantes">Número de Habitantes</label>
-            <input type="text" name="numeroHabitantes" id="campo-numero-habitantes" />
-        </div>
 
-
-    <div class="row">   
-        <div class="col-12">
-            <div class="form-group">
-                <label form="campo-estado">Estado</label>
-                <select class="form-control" name="estado">
-                    <option disabled="disabled" selected="selected">Selecione um estado</option>
-                    @foreach (Model.Estado estado in ViewBag.Estados)
-                    {
-                        <option value="@estado.Id">@estado.Nome</option>
-                    }
-                </select>
+<h3>Cadastro de Cidades</h3>
+<div class="row" style="">
+    <div class="col-12">
+        <form action="/cidade/store" method="post">
+            <div>
+                <label for="campo-nome" class="col-4 text-md">Nome</label>
+                <input type="text" class="col-4" name="nome" id="campo-nome" />
             </div>
-        </div>
+            <div>
+                <label for="campo-numero-habitantes" class="col-4 text-md">Número de Habitantes</label>
+                <input type="text" name="numeroHabitantes" class="col-4" id="campo-numero-habitantes" />
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label form="campo-estado">Estado</label>
+                        <select class="form-control" name="estado">
+                            <option disabled="disabled" selected="selected">Selecione um estado</option>
+                            @foreach (Model.Estado estado in ViewBag.Estados)
+                            {
+                                <option value="@estado.Id">@estado.Nome</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Salvar</button>
+        </form>
     </div>
-        <button class="btn btn-success" type="submit">Salvar</button>
-    </form>
-</body>
-</html>
+</div>
