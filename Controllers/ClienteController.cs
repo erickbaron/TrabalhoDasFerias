@@ -27,13 +27,17 @@ namespace Trabalho_das_Férias.Controllers
 
         public ActionResult Cadastro()
         {
+            CidadeRepository cidadeRepository = new CidadeRepository();
+            List<Cidade> cidades = cidadeRepository.ObterTodos();
+            ViewBag.Cidades = cidades;
+
             return View();
         }
 
-        public ActionResult Store(int idCidade, string nome, string cpf, DateTime dataNascimento, int numero, string complemento, string logradouro, string cep)
+        public ActionResult Store(int cidade, string nome, string cpf, DateTime dataNascimento, int numero, string complemento, string logradouro, string cep)
         {
             Cliente cliente = new Cliente();
-            cliente.IdCidade = idCidade;
+            cliente.IdCidade = cidade;
             cliente.Nome = nome;
             cliente.Cpf = cpf;
             cliente.DataNascimento = dataNascimento;
